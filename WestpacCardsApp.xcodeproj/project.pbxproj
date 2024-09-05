@@ -26,6 +26,7 @@
 		85A4A8C72C89CD9900360779 /* creditcards.json in Resources */ = {isa = PBXBuildFile; fileRef = 85A4A8C62C89CD9900360779 /* creditcards.json */; };
 		85A4A8C92C89CE7C00360779 /* LocalCreditCardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8C82C89CE7C00360779 /* LocalCreditCardService.swift */; };
 		85A4A8CB2C89DB4000360779 /* CreditCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8CA2C89DB4000360779 /* CreditCardType.swift */; };
+		85A4A8CD2C89DC7D00360779 /* CreditCardListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8CC2C89DC7D00360779 /* CreditCardListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		85A4A8C62C89CD9900360779 /* creditcards.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = creditcards.json; sourceTree = "<group>"; };
 		85A4A8C82C89CE7C00360779 /* LocalCreditCardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCreditCardService.swift; sourceTree = "<group>"; };
 		85A4A8CA2C89DB4000360779 /* CreditCardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardType.swift; sourceTree = "<group>"; };
+		85A4A8CC2C89DC7D00360779 /* CreditCardListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				859F6C3B2C89A8C600EDD772 /* WestpacCardsAppTests.swift */,
+				85A4A8CC2C89DC7D00360779 /* CreditCardListViewModelTests.swift */,
 			);
 			path = WestpacCardsAppTests;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				859F6C3C2C89A8C600EDD772 /* WestpacCardsAppTests.swift in Sources */,
+				85A4A8CD2C89DC7D00360779 /* CreditCardListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
