@@ -7,8 +7,14 @@
 
 import Foundation
 
+enum ViewState: Equatable {
+    case loading
+    case loaded(result: [CreditCard])
+    case error(message: String)
+}
+
 class CreditCardListViewModel: ObservableObject {
-    @Published var creditCardList = [CreditCard]()
+    @Published var state: ViewState = .loading
     
     private let service: CreditCardServiceProtocol
     
@@ -18,12 +24,13 @@ class CreditCardListViewModel: ObservableObject {
  
     @MainActor
     func loadCreditCards() async {
+        state = .loading
         let result = await service.fetch()
         switch result {
         case .failure(let error):
-            print("Error: \(error.localizedDescription)")
+            state = .error(message: error.localizedDescription)
         case .success(let result):
-            creditCardList = result
+            state = .loaded(result: result)
         }
     }
 }

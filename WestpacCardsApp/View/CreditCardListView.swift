@@ -12,10 +12,24 @@ struct CreditCardListView: View {
     @ObservedObject var viewModel: CreditCardListViewModel
     
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                ForEach(viewModel.creditCardList, id: \.self) { cc in
-                    CreditCardView(model: cc)
+        
+        VStack {
+            switch viewModel.state {
+            case .loading:
+                LoadingView()
+            case .error(let message):
+                CreditCardsUnavailable(
+                    symbol: .error,
+                    title: "Error retrieving cards",
+                    message: message
+                )
+            case .loaded(let cards):
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        ForEach(cards, id: \.self) { cc in
+                            CreditCardView(model: cc)
+                        }
+                    }
                 }
             }
         }
@@ -25,24 +39,7 @@ struct CreditCardListView: View {
     }
 }
 
-private struct CreditCardView: View {
-    var model: CreditCard
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(model.type)
-                .fontWeight(.bold)
-                .foregroundColor(.primary)
-            Text(model.number)
-                .foregroundColor(.primary)
-                .lineLimit(1)
-            Text(model.expiryDate)
-                .foregroundColor(.primary)
-                .lineLimit(1)
-        }
-        .padding()
-    }
-}
+
 
 #Preview {
     CreditCardListView(viewModel: CreditCardListViewModel())

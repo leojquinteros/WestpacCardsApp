@@ -18,6 +18,10 @@
 		85A4A8B32C89B6D300360779 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8B22C89B6D300360779 /* ServiceError.swift */; };
 		85A4A8B52C89B71600360779 /* CreditCardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8B42C89B71600360779 /* CreditCardService.swift */; };
 		85A4A8B82C89B9BB00360779 /* CreditCardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8B72C89B9BB00360779 /* CreditCardListViewModel.swift */; };
+		85A4A8BA2C89C03500360779 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8B92C89C03500360779 /* LoadingView.swift */; };
+		85A4A8BC2C89C0A500360779 /* CreditCardsUnavailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8BB2C89C0A500360779 /* CreditCardsUnavailable.swift */; };
+		85A4A8BE2C89C10600360779 /* SFSymbol+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8BD2C89C10600360779 /* SFSymbol+Utils.swift */; };
+		85A4A8C02C89C25800360779 /* CreditCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8BF2C89C25800360779 /* CreditCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,10 @@
 		85A4A8B22C89B6D300360779 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		85A4A8B42C89B71600360779 /* CreditCardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardService.swift; sourceTree = "<group>"; };
 		85A4A8B72C89B9BB00360779 /* CreditCardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardListViewModel.swift; sourceTree = "<group>"; };
+		85A4A8B92C89C03500360779 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		85A4A8BB2C89C0A500360779 /* CreditCardsUnavailable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardsUnavailable.swift; sourceTree = "<group>"; };
+		85A4A8BD2C89C10600360779 /* SFSymbol+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSymbol+Utils.swift"; sourceTree = "<group>"; };
+		85A4A8BF2C89C25800360779 /* CreditCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +117,7 @@
 				85A4A8AD2C89B39400360779 /* View */,
 				85A4A8AC2C89B38800360779 /* Resources */,
 				859F6C302C89A8C600EDD772 /* Preview Content */,
+				85A4A8BD2C89C10600360779 /* SFSymbol+Utils.swift */,
 			);
 			path = WestpacCardsApp;
 			sourceTree = "<group>";
@@ -150,6 +159,9 @@
 			isa = PBXGroup;
 			children = (
 				859F6C2C2C89A8C500EDD772 /* CreditCardListView.swift */,
+				85A4A8B92C89C03500360779 /* LoadingView.swift */,
+				85A4A8BB2C89C0A500360779 /* CreditCardsUnavailable.swift */,
+				85A4A8BF2C89C25800360779 /* CreditCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,10 +322,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				85A4A8B32C89B6D300360779 /* ServiceError.swift in Sources */,
+				85A4A8BE2C89C10600360779 /* SFSymbol+Utils.swift in Sources */,
 				85A4A8B52C89B71600360779 /* CreditCardService.swift in Sources */,
+				85A4A8C02C89C25800360779 /* CreditCardView.swift in Sources */,
 				85A4A8B12C89B47E00360779 /* CreditCard.swift in Sources */,
+				85A4A8BC2C89C0A500360779 /* CreditCardsUnavailable.swift in Sources */,
 				859F6C2D2C89A8C500EDD772 /* CreditCardListView.swift in Sources */,
 				859F6C2B2C89A8C500EDD772 /* WestpacCardsAppApp.swift in Sources */,
+				85A4A8BA2C89C03500360779 /* LoadingView.swift in Sources */,
 				85A4A8B82C89B9BB00360779 /* CreditCardListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
