@@ -59,6 +59,8 @@ struct CreditCardsUnavailable: View {
     }
 }
 
+#if DEBUG
+
 #Preview("CreditCardsUnavailable with action") {
     CreditCardsUnavailable(
         symbol: .error,
@@ -76,3 +78,5 @@ struct CreditCardsUnavailable: View {
         message: "Description: Decoding error"
     )
 }
+
+#endif

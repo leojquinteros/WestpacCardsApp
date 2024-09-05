@@ -12,7 +12,6 @@ struct CreditCardListView: View {
     @ObservedObject var viewModel: CreditCardListViewModel
     
     var body: some View {
-        
         VStack {
             switch viewModel.state {
             case .loading:
@@ -39,8 +38,10 @@ struct CreditCardListView: View {
     }
 }
 
+#if DEBUG
 
-
-#Preview {
-    CreditCardListView(viewModel: CreditCardListViewModel())
+#Preview("Credit card list") {
+    CreditCardListView(viewModel: CreditCardListViewModel.mock)
 }
+
+#endif

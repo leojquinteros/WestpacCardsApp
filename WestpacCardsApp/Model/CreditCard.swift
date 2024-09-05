@@ -14,6 +14,14 @@ struct CreditCard: Hashable, Decodable, Identifiable {
     let expiryDate: String
     let type: String
     
+    init(id: Int, uid: String, number: String, expiryDate: String, type: String) {
+        self.id = id
+        self.uid = uid
+        self.number = number
+        self.expiryDate = expiryDate
+        self.type = type
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id
         case uid

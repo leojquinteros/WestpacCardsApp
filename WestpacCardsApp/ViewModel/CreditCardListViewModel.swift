@@ -34,3 +34,31 @@ class CreditCardListViewModel: ObservableObject {
         }
     }
 }
+
+#if DEBUG
+
+class MockCreditCardService: CreditCardServiceProtocol {
+    var mockError: ServiceError?
+    var mockCards: [CreditCard] = [
+        CreditCard(id: 123, uid: "abc-123-def-456", number: "123456789", expiryDate: "tomorrow", type: "visa"),
+        CreditCard(id: 456, uid: "abc-123-def-457", number: "341234567", expiryDate: "", type: "mastercard"),
+        CreditCard(id: 789, uid: "abc-123-def-458", number: "145678934", expiryDate: "", type: "mastercard"),
+        CreditCard(id: 111, uid: "abc-123-def-459", number: "343434344", expiryDate: "12-12-2024", type: "visa")
+    ]
+    
+    func fetch() async -> Result<[CreditCard], ServiceError> {
+        if let mockError {
+            return .failure(mockError)
+        }
+        return .success(mockCards)
+    }
+}
+
+extension CreditCardListViewModel: Mockable {
+    
+    static var mock: CreditCardListViewModel {
+        CreditCardListViewModel(service: MockCreditCardService())
+    }
+}
+
+#endif

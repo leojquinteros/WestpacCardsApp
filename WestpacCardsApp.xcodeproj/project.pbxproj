@@ -22,6 +22,7 @@
 		85A4A8BC2C89C0A500360779 /* CreditCardsUnavailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8BB2C89C0A500360779 /* CreditCardsUnavailable.swift */; };
 		85A4A8BE2C89C10600360779 /* SFSymbol+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8BD2C89C10600360779 /* SFSymbol+Utils.swift */; };
 		85A4A8C02C89C25800360779 /* CreditCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8BF2C89C25800360779 /* CreditCardView.swift */; };
+		85A4A8C32C89C46A00360779 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8C22C89C46A00360779 /* Mockable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		85A4A8BB2C89C0A500360779 /* CreditCardsUnavailable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardsUnavailable.swift; sourceTree = "<group>"; };
 		85A4A8BD2C89C10600360779 /* SFSymbol+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSymbol+Utils.swift"; sourceTree = "<group>"; };
 		85A4A8BF2C89C25800360779 /* CreditCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardView.swift; sourceTree = "<group>"; };
+		85A4A8C22C89C46A00360779 /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,14 +112,14 @@
 		859F6C292C89A8C500EDD772 /* WestpacCardsApp */ = {
 			isa = PBXGroup;
 			children = (
-				85A4A8B62C89B95E00360779 /* ViewModel */,
 				859F6C2A2C89A8C500EDD772 /* WestpacCardsAppApp.swift */,
 				85A4A8AF2C89B46200360779 /* Model */,
-				85A4A8AE2C89B39C00360779 /* Service */,
 				85A4A8AD2C89B39400360779 /* View */,
+				85A4A8B62C89B95E00360779 /* ViewModel */,
+				85A4A8AE2C89B39C00360779 /* Service */,
 				85A4A8AC2C89B38800360779 /* Resources */,
 				859F6C302C89A8C600EDD772 /* Preview Content */,
-				85A4A8BD2C89C10600360779 /* SFSymbol+Utils.swift */,
+				85A4A8C12C89C45B00360779 /* Utils */,
 			);
 			path = WestpacCardsApp;
 			sourceTree = "<group>";
@@ -189,6 +191,15 @@
 				85A4A8B72C89B9BB00360779 /* CreditCardListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		85A4A8C12C89C45B00360779 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				85A4A8BD2C89C10600360779 /* SFSymbol+Utils.swift */,
+				85A4A8C22C89C46A00360779 /* Mockable.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85A4A8C32C89C46A00360779 /* Mockable.swift in Sources */,
 				85A4A8B32C89B6D300360779 /* ServiceError.swift in Sources */,
 				85A4A8BE2C89C10600360779 /* SFSymbol+Utils.swift in Sources */,
 				85A4A8B52C89B71600360779 /* CreditCardService.swift in Sources */,

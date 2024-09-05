@@ -25,3 +25,19 @@ struct CreditCardView: View {
         .padding()
     }
 }
+
+#if DEBUG
+
+#Preview("CreditCardView") {
+    CreditCardView(
+        model: CreditCard(
+            id: 123,
+            uid: "abc-123-def-456",
+            number: "123456789",
+            expiryDate: "tomorrow",
+            type: "visa"
+        )
+    )
+}
+
+#endif
