@@ -8,6 +8,7 @@
 import SwiftUI
 
 enum SFSymbol: String {
+    case star = "star.fill"
     case error = "exclamationmark"
 }
 

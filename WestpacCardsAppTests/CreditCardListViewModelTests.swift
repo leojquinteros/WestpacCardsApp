@@ -16,7 +16,7 @@ final class CreditCardListViewModelTests: XCTestCase {
     override func setUp() {
         super.setUp()
         mockService = MockCreditCardService()
-        viewModel = CreditCardListViewModel(service: mockService)
+        viewModel = CreditCardListViewModel(service: mockService, favouritesManager: MockFavouritesManager())
     }
 
     override func tearDown() {
@@ -56,4 +56,9 @@ private class MockCreditCardService: CreditCardServiceProtocol {
     func fetch() async -> Result<[CreditCard], ServiceError> {
         result ?? .failure(.invalidRequestError)
     }
+}
+
+private class MockFavouritesManager: FavouritesManagerProtocol {
+    func add(_ card: CreditCard) { }
+    func remove(_ cardID: Int) { }
 }

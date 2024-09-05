@@ -23,10 +23,18 @@ struct CreditCardListView: View {
                     message: message
                 )
             case .loaded(let cards):
-                ScrollView {
-                    VStack(alignment: .leading) {
-                        ForEach(cards, id: \.self) { cc in
-                            CreditCardView(model: cc)
+                NavigationStack {
+                    List {
+                        ForEach(cards, id: \.self) { card in
+                            CreditCardView(model: card)
+                                .swipeActions(allowsFullSwipe: false) {
+                                    Button {
+                                        viewModel.saveToFavourites(card)
+                                    } label: {
+                                        Label("Save", symbol: .star)
+                                    }
+                                    .tint(.yellow)
+                                }
                         }
                     }
                 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CreditCardType: String {
+enum CreditCardType: String, Codable {
     case visa
     case mastercard
     case maestro

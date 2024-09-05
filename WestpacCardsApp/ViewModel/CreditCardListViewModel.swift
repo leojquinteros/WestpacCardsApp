@@ -17,9 +17,14 @@ class CreditCardListViewModel: ObservableObject {
     @Published var state: ViewState = .loading
     
     private let service: CreditCardServiceProtocol
+    private let favouritesManager: FavouritesManagerProtocol
     
-    init(service: CreditCardServiceProtocol = LocalCreditCardService()) {
+    init(
+        service: CreditCardServiceProtocol = LocalCreditCardService(),
+        favouritesManager: FavouritesManagerProtocol = FavouritesManager()
+    ) {
         self.service = service
+        self.favouritesManager = favouritesManager
     }
  
     @MainActor
@@ -32,6 +37,10 @@ class CreditCardListViewModel: ObservableObject {
         case .success(let result):
             state = .loaded(result: result)
         }
+    }
+    
+    func saveToFavourites(_ card: CreditCard) {
+        favouritesManager.add(card)
     }
 }
 
@@ -55,10 +64,18 @@ class MockCreditCardService: CreditCardServiceProtocol {
     }
 }
 
+class MockFavouritesManager: FavouritesManagerProtocol {
+    func add(_ card: CreditCard) { }
+    func remove(_ cardID: Int) { }
+}
+
 extension CreditCardListViewModel: Mockable {
     
     static var mock: CreditCardListViewModel {
-        CreditCardListViewModel(service: MockCreditCardService())
+        CreditCardListViewModel(
+            service: MockCreditCardService(),
+            favouritesManager: MockFavouritesManager()
+        )
     }
 }
 

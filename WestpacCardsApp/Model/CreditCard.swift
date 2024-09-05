@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CreditCard: Hashable, Decodable, Identifiable {
+struct CreditCard: Hashable, Codable, Identifiable {
     let id: Int
     let uid: String
     let number: String
