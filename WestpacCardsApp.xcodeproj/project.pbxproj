@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		859F6C2B2C89A8C500EDD772 /* WestpacCardsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F6C2A2C89A8C500EDD772 /* WestpacCardsAppApp.swift */; };
+		859F6C2D2C89A8C500EDD772 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F6C2C2C89A8C500EDD772 /* ContentView.swift */; };
+		859F6C2F2C89A8C600EDD772 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 859F6C2E2C89A8C600EDD772 /* Assets.xcassets */; };
+		859F6C322C89A8C600EDD772 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 859F6C312C89A8C600EDD772 /* Preview Assets.xcassets */; };
+		859F6C3C2C89A8C600EDD772 /* WestpacCardsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F6C3B2C89A8C600EDD772 /* WestpacCardsAppTests.swift */; };
+		859F6C462C89A8C600EDD772 /* WestpacCardsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F6C452C89A8C600EDD772 /* WestpacCardsAppUITests.swift */; };
+		859F6C482C89A8C600EDD772 /* WestpacCardsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F6C472C89A8C600EDD772 /* WestpacCardsAppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		859F6C382C89A8C600EDD772 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 859F6C1F2C89A8C500EDD772 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 859F6C262C89A8C500EDD772;
+			remoteInfo = WestpacCardsApp;
+		};
+		859F6C422C89A8C600EDD772 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 859F6C1F2C89A8C500EDD772 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 859F6C262C89A8C500EDD772;
+			remoteInfo = WestpacCardsApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		859F6C272C89A8C500EDD772 /* WestpacCardsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WestpacCardsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		859F6C2A2C89A8C500EDD772 /* WestpacCardsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WestpacCardsAppApp.swift; sourceTree = "<group>"; };
+		859F6C2C2C89A8C500EDD772 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		859F6C2E2C89A8C600EDD772 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		859F6C312C89A8C600EDD772 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		859F6C372C89A8C600EDD772 /* WestpacCardsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WestpacCardsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		859F6C3B2C89A8C600EDD772 /* WestpacCardsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WestpacCardsAppTests.swift; sourceTree = "<group>"; };
+		859F6C412C89A8C600EDD772 /* WestpacCardsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WestpacCardsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		859F6C452C89A8C600EDD772 /* WestpacCardsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WestpacCardsAppUITests.swift; sourceTree = "<group>"; };
+		859F6C472C89A8C600EDD772 /* WestpacCardsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WestpacCardsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		859F6C242C89A8C500EDD772 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		859F6C342C89A8C600EDD772 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		859F6C3E2C89A8C600EDD772 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		859F6C1E2C89A8C500EDD772 = {
+			isa = PBXGroup;
+			children = (
+				859F6C292C89A8C500EDD772 /* WestpacCardsApp */,
+				859F6C3A2C89A8C600EDD772 /* WestpacCardsAppTests */,
+				859F6C442C89A8C600EDD772 /* WestpacCardsAppUITests */,
+				859F6C282C89A8C500EDD772 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		859F6C282C89A8C500EDD772 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				859F6C272C89A8C500EDD772 /* WestpacCardsApp.app */,
+				859F6C372C89A8C600EDD772 /* WestpacCardsAppTests.xctest */,
+				859F6C412C89A8C600EDD772 /* WestpacCardsAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		859F6C292C89A8C500EDD772 /* WestpacCardsApp */ = {
+			isa = PBXGroup;
+			children = (
+				859F6C2A2C89A8C500EDD772 /* WestpacCardsAppApp.swift */,
+				859F6C2C2C89A8C500EDD772 /* ContentView.swift */,
+				859F6C2E2C89A8C600EDD772 /* Assets.xcassets */,
+				859F6C302C89A8C600EDD772 /* Preview Content */,
+			);
+			path = WestpacCardsApp;
+			sourceTree = "<group>";
+		};
+		859F6C302C89A8C600EDD772 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				859F6C312C89A8C600EDD772 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		859F6C3A2C89A8C600EDD772 /* WestpacCardsAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				859F6C3B2C89A8C600EDD772 /* WestpacCardsAppTests.swift */,
+			);
+			path = WestpacCardsAppTests;
+			sourceTree = "<group>";
+		};
+		859F6C442C89A8C600EDD772 /* WestpacCardsAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				859F6C452C89A8C600EDD772 /* WestpacCardsAppUITests.swift */,
+				859F6C472C89A8C600EDD772 /* WestpacCardsAppUITestsLaunchTests.swift */,
+			);
+			path = WestpacCardsAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		859F6C262C89A8C500EDD772 /* WestpacCardsApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 859F6C4B2C89A8C600EDD772 /* Build configuration list for PBXNativeTarget "WestpacCardsApp" */;
+			buildPhases = (
+				859F6C232C89A8C500EDD772 /* Sources */,
+				859F6C242C89A8C500EDD772 /* Frameworks */,
+				859F6C252C89A8C500EDD772 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WestpacCardsApp;
+			productName = WestpacCardsApp;
+			productReference = 859F6C272C89A8C500EDD772 /* WestpacCardsApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		859F6C362C89A8C600EDD772 /* WestpacCardsAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 859F6C4E2C89A8C600EDD772 /* Build configuration list for PBXNativeTarget "WestpacCardsAppTests" */;
+			buildPhases = (
+				859F6C332C89A8C600EDD772 /* Sources */,
+				859F6C342C89A8C600EDD772 /* Frameworks */,
+				859F6C352C89A8C600EDD772 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				859F6C392C89A8C600EDD772 /* PBXTargetDependency */,
+			);
+			name = WestpacCardsAppTests;
+			productName = WestpacCardsAppTests;
+			productReference = 859F6C372C89A8C600EDD772 /* WestpacCardsAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		859F6C402C89A8C600EDD772 /* WestpacCardsAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 859F6C512C89A8C600EDD772 /* Build configuration list for PBXNativeTarget "WestpacCardsAppUITests" */;
+			buildPhases = (
+				859F6C3D2C89A8C600EDD772 /* Sources */,
+				859F6C3E2C89A8C600EDD772 /* Frameworks */,
+				859F6C3F2C89A8C600EDD772 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				859F6C432C89A8C600EDD772 /* PBXTargetDependency */,
+			);
+			name = WestpacCardsAppUITests;
+			productName = WestpacCardsAppUITests;
+			productReference = 859F6C412C89A8C600EDD772 /* WestpacCardsAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		859F6C1F2C89A8C500EDD772 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					859F6C262C89A8C500EDD772 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					859F6C362C89A8C600EDD772 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 859F6C262C89A8C500EDD772;
+					};
+					859F6C402C89A8C600EDD772 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 859F6C262C89A8C500EDD772;
+					};
+				};
+			};
+			buildConfigurationList = 859F6C222C89A8C500EDD772 /* Build configuration list for PBXProject "WestpacCardsApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 859F6C1E2C89A8C500EDD772;
+			productRefGroup = 859F6C282C89A8C500EDD772 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				859F6C262C89A8C500EDD772 /* WestpacCardsApp */,
+				859F6C362C89A8C600EDD772 /* WestpacCardsAppTests */,
+				859F6C402C89A8C600EDD772 /* WestpacCardsAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		859F6C252C89A8C500EDD772 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				859F6C322C89A8C600EDD772 /* Preview Assets.xcassets in Resources */,
+				859F6C2F2C89A8C600EDD772 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		859F6C352C89A8C600EDD772 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		859F6C3F2C89A8C600EDD772 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		859F6C232C89A8C500EDD772 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				859F6C2D2C89A8C500EDD772 /* ContentView.swift in Sources */,
+				859F6C2B2C89A8C500EDD772 /* WestpacCardsAppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		859F6C332C89A8C600EDD772 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				859F6C3C2C89A8C600EDD772 /* WestpacCardsAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		859F6C3D2C89A8C600EDD772 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				859F6C482C89A8C600EDD772 /* WestpacCardsAppUITestsLaunchTests.swift in Sources */,
+				859F6C462C89A8C600EDD772 /* WestpacCardsAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		859F6C392C89A8C600EDD772 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 859F6C262C89A8C500EDD772 /* WestpacCardsApp */;
+			targetProxy = 859F6C382C89A8C600EDD772 /* PBXContainerItemProxy */;
+		};
+		859F6C432C89A8C600EDD772 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 859F6C262C89A8C500EDD772 /* WestpacCardsApp */;
+			targetProxy = 859F6C422C89A8C600EDD772 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		859F6C492C89A8C600EDD772 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		859F6C4A2C89A8C600EDD772 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		859F6C4C2C89A8C600EDD772 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WestpacCardsApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 73P6823KT2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = leojquinteros.WestpacCardsApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		859F6C4D2C89A8C600EDD772 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WestpacCardsApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 73P6823KT2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = leojquinteros.WestpacCardsApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		859F6C4F2C89A8C600EDD772 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 73P6823KT2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = leojquinteros.WestpacCardsAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WestpacCardsApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WestpacCardsApp";
+			};
+			name = Debug;
+		};
+		859F6C502C89A8C600EDD772 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 73P6823KT2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = leojquinteros.WestpacCardsAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WestpacCardsApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WestpacCardsApp";
+			};
+			name = Release;
+		};
+		859F6C522C89A8C600EDD772 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 73P6823KT2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = leojquinteros.WestpacCardsAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WestpacCardsApp;
+			};
+			name = Debug;
+		};
+		859F6C532C89A8C600EDD772 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 73P6823KT2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = leojquinteros.WestpacCardsAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WestpacCardsApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		859F6C222C89A8C500EDD772 /* Build configuration list for PBXProject "WestpacCardsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				859F6C492C89A8C600EDD772 /* Debug */,
+				859F6C4A2C89A8C600EDD772 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		859F6C4B2C89A8C600EDD772 /* Build configuration list for PBXNativeTarget "WestpacCardsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				859F6C4C2C89A8C600EDD772 /* Debug */,
+				859F6C4D2C89A8C600EDD772 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		859F6C4E2C89A8C600EDD772 /* Build configuration list for PBXNativeTarget "WestpacCardsAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				859F6C4F2C89A8C600EDD772 /* Debug */,
+				859F6C502C89A8C600EDD772 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		859F6C512C89A8C600EDD772 /* Build configuration list for PBXNativeTarget "WestpacCardsAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				859F6C522C89A8C600EDD772 /* Debug */,
+				859F6C532C89A8C600EDD772 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 859F6C1F2C89A8C500EDD772 /* Project object */;
+}
