@@ -25,6 +25,7 @@
 		85A4A8C32C89C46A00360779 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8C22C89C46A00360779 /* Mockable.swift */; };
 		85A4A8C72C89CD9900360779 /* creditcards.json in Resources */ = {isa = PBXBuildFile; fileRef = 85A4A8C62C89CD9900360779 /* creditcards.json */; };
 		85A4A8C92C89CE7C00360779 /* LocalCreditCardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8C82C89CE7C00360779 /* LocalCreditCardService.swift */; };
+		85A4A8CB2C89DB4000360779 /* CreditCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8CA2C89DB4000360779 /* CreditCardType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		85A4A8C22C89C46A00360779 /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 		85A4A8C62C89CD9900360779 /* creditcards.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = creditcards.json; sourceTree = "<group>"; };
 		85A4A8C82C89CE7C00360779 /* LocalCreditCardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCreditCardService.swift; sourceTree = "<group>"; };
+		85A4A8CA2C89DB4000360779 /* CreditCardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			children = (
 				85A4A8B02C89B47E00360779 /* CreditCard.swift */,
 				85A4A8B22C89B6D300360779 /* ServiceError.swift */,
+				85A4A8CA2C89DB4000360779 /* CreditCardType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				85A4A8B12C89B47E00360779 /* CreditCard.swift in Sources */,
 				85A4A8BC2C89C0A500360779 /* CreditCardsUnavailable.swift in Sources */,
 				859F6C2D2C89A8C500EDD772 /* CreditCardListView.swift in Sources */,
+				85A4A8CB2C89DB4000360779 /* CreditCardType.swift in Sources */,
 				859F6C2B2C89A8C500EDD772 /* WestpacCardsAppApp.swift in Sources */,
 				85A4A8BA2C89C03500360779 /* LoadingView.swift in Sources */,
 				85A4A8B82C89B9BB00360779 /* CreditCardListViewModel.swift in Sources */,

@@ -12,9 +12,9 @@ struct CreditCard: Hashable, Decodable, Identifiable {
     let uid: String
     let number: String
     let expiryDate: String
-    let type: String
+    let type: CreditCardType
     
-    init(id: Int, uid: String, number: String, expiryDate: String, type: String) {
+    init(id: Int, uid: String, number: String, expiryDate: String, type: CreditCardType) {
         self.id = id
         self.uid = uid
         self.number = number
@@ -36,7 +36,14 @@ struct CreditCard: Hashable, Decodable, Identifiable {
         self.uid = try container.decode(String.self, forKey: .uid)
         self.number = try container.decode(String.self, forKey: .number)
         self.expiryDate = try container.decode(String.self, forKey: .expiryDate)
-        self.type = try container.decode(String.self, forKey: .type)
+        let rawCardType = try container.decode(String.self, forKey: .type)
+        if let cardType = CreditCardType(rawValue: rawCardType) {
+             self.type = cardType
+        } else {
+            throw DecodingError.dataCorrupted(.init(
+                codingPath: decoder.codingPath,
+                debugDescription: "Cannot initialize CreditCardType from value \(rawCardType)")
+            )
+        }
     }
-    
 }

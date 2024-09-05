@@ -12,7 +12,7 @@ struct CreditCardView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(model.type)
+            Text(model.type.description)
                 .fontWeight(.bold)
                 .foregroundColor(.primary)
             Text(model.number)
@@ -35,7 +35,7 @@ struct CreditCardView: View {
             uid: "abc-123-def-456",
             number: "123456789",
             expiryDate: "tomorrow",
-            type: "visa"
+            type: .visa
         )
     )
 }
