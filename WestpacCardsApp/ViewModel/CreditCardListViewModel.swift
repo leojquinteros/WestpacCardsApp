@@ -18,7 +18,7 @@ class CreditCardListViewModel: ObservableObject {
     
     private let service: CreditCardServiceProtocol
     
-    init(service: CreditCardServiceProtocol = CreditCardService()) {
+    init(service: CreditCardServiceProtocol = LocalCreditCardService()) {
         self.service = service
     }
  
@@ -38,6 +38,7 @@ class CreditCardListViewModel: ObservableObject {
 #if DEBUG
 
 class MockCreditCardService: CreditCardServiceProtocol {
+    var url: URL?
     var mockError: ServiceError?
     var mockCards: [CreditCard] = [
         CreditCard(id: 123, uid: "abc-123-def-456", number: "123456789", expiryDate: "tomorrow", type: "visa"),

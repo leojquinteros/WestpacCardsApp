@@ -8,6 +8,7 @@
 import Foundation
 
 protocol CreditCardServiceProtocol {
+    var url: URL? { get }
     func fetch() async -> Result<[CreditCard], ServiceError>
 }
 

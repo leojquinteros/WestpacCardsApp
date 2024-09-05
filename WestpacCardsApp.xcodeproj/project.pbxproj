@@ -23,6 +23,8 @@
 		85A4A8BE2C89C10600360779 /* SFSymbol+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8BD2C89C10600360779 /* SFSymbol+Utils.swift */; };
 		85A4A8C02C89C25800360779 /* CreditCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8BF2C89C25800360779 /* CreditCardView.swift */; };
 		85A4A8C32C89C46A00360779 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8C22C89C46A00360779 /* Mockable.swift */; };
+		85A4A8C72C89CD9900360779 /* creditcards.json in Resources */ = {isa = PBXBuildFile; fileRef = 85A4A8C62C89CD9900360779 /* creditcards.json */; };
+		85A4A8C92C89CE7C00360779 /* LocalCreditCardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8C82C89CE7C00360779 /* LocalCreditCardService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		85A4A8BD2C89C10600360779 /* SFSymbol+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSymbol+Utils.swift"; sourceTree = "<group>"; };
 		85A4A8BF2C89C25800360779 /* CreditCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardView.swift; sourceTree = "<group>"; };
 		85A4A8C22C89C46A00360779 /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
+		85A4A8C62C89CD9900360779 /* creditcards.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = creditcards.json; sourceTree = "<group>"; };
+		85A4A8C82C89CE7C00360779 /* LocalCreditCardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCreditCardService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +121,9 @@
 				85A4A8AD2C89B39400360779 /* View */,
 				85A4A8B62C89B95E00360779 /* ViewModel */,
 				85A4A8AE2C89B39C00360779 /* Service */,
+				85A4A8C12C89C45B00360779 /* Utils */,
 				85A4A8AC2C89B38800360779 /* Resources */,
 				859F6C302C89A8C600EDD772 /* Preview Content */,
-				85A4A8C12C89C45B00360779 /* Utils */,
 			);
 			path = WestpacCardsApp;
 			sourceTree = "<group>";
@@ -153,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				859F6C2E2C89A8C600EDD772 /* Assets.xcassets */,
+				85A4A8C62C89CD9900360779 /* creditcards.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				85A4A8B42C89B71600360779 /* CreditCardService.swift */,
+				85A4A8C82C89CE7C00360779 /* LocalCreditCardService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				859F6C322C89A8C600EDD772 /* Preview Assets.xcassets in Resources */,
+				85A4A8C72C89CD9900360779 /* creditcards.json in Resources */,
 				859F6C2F2C89A8C600EDD772 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85A4A8C92C89CE7C00360779 /* LocalCreditCardService.swift in Sources */,
 				85A4A8C32C89C46A00360779 /* Mockable.swift in Sources */,
 				85A4A8B32C89B6D300360779 /* ServiceError.swift in Sources */,
 				85A4A8BE2C89C10600360779 /* SFSymbol+Utils.swift in Sources */,
