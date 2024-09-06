@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct GroupedCreditCard: Equatable {
+    let key: CreditCardType
+    let value: [CreditCard]
+}
+
 struct CreditCard: Hashable, Codable, Identifiable {
     let id: Int
     let uid: String

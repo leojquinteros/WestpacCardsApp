@@ -2,54 +2,59 @@
 //  CreditCardListView.swift
 //  WestpacCardsApp
 //
-//  Created by Leo Quinteros on 05/09/2024.
+//  Created by Leo Quinteros on 06/09/2024.
 //
 
 import SwiftUI
 
 struct CreditCardListView: View {
-    
-    @ObservedObject var viewModel: CreditCardListViewModel
+    let cards: [CreditCard]
+    let viewModel: CreditCardsViewModel
     
     var body: some View {
-        VStack {
-            switch viewModel.state {
-            case .loading:
-                LoadingView()
-            case .error(let message):
-                CreditCardsUnavailable(
-                    symbol: .error,
-                    title: "Error retrieving cards",
-                    message: message
-                )
-            case .loaded(let cards):
-                NavigationStack {
-                    List {
-                        ForEach(cards, id: \.self) { card in
-                            CreditCardView(model: card)
-                                .swipeActions(allowsFullSwipe: false) {
-                                    Button {
-                                        viewModel.saveToFavourites(card)
-                                    } label: {
-                                        Label("Save", symbol: .star)
-                                    }
-                                    .tint(.yellow)
-                                }
+        NavigationStack {
+            List {
+                ForEach(cards, id: \.self) { card in
+                    CreditCardView(model: card)
+                        .swipeActions(allowsFullSwipe: false) {
+                            Button {
+                                viewModel.saveToFavourites(card)
+                            } label: {
+                                Label("Save", symbol: .star)
+                            }
+                            .tint(.yellow)
                         }
-                    }
                 }
             }
-        }
-        .task {
-            await viewModel.loadCreditCards()
+            .navigationTitle("Card list")
+            .toolbar {
+                Button("Group") {
+                    viewModel.grouped()
+                }
+            }
         }
     }
 }
 
 #if DEBUG
 
-#Preview("Credit card list") {
-    CreditCardListView(viewModel: CreditCardListViewModel.mock)
+#Preview {
+    CreditCardListView(cards: [
+        CreditCard(
+            id: 123,
+            uid: "abc-123-def-456",
+            number: "123456789",
+            expiryDate: "tomorrow",
+            type: .visa
+        ),
+        CreditCard(
+            id: 123,
+            uid: "abc-123-def-456",
+            number: "123456789",
+            expiryDate: "tomorrow",
+            type: .visa
+        )
+    ], viewModel: CreditCardsViewModel.mock)
 }
 
 #endif

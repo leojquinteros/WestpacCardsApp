@@ -1,5 +1,5 @@
 //
-//  CreditCardListViewModel.swift
+//  CreditCardsViewModel.swift
 //  WestpacCardsApp
 //
 //  Created by Leo Quinteros on 05/09/2024.
@@ -10,14 +10,16 @@ import Foundation
 enum ViewState: Equatable {
     case loading
     case loaded(result: [CreditCard])
+    case grouped(result: [GroupedCreditCard])
     case error(message: String)
 }
 
-class CreditCardListViewModel: ObservableObject {
+class CreditCardsViewModel: ObservableObject {
     @Published var state: ViewState = .loading
     
     private let service: CreditCardServiceProtocol
     private let favouritesManager: FavouritesManagerProtocol
+    private var fetchedCards: [CreditCard]? = nil
     
     init(
         service: CreditCardServiceProtocol = LocalCreditCardService(),
@@ -36,11 +38,29 @@ class CreditCardListViewModel: ObservableObject {
             state = .error(message: error.localizedDescription)
         case .success(let result):
             state = .loaded(result: result)
+            fetchedCards = result
         }
     }
     
     func saveToFavourites(_ card: CreditCard) {
         favouritesManager.add(card)
+    }
+    
+    func list() {
+        guard let fetchedCards else { return }
+        state = .loaded(result: fetchedCards)
+    }
+    
+    func grouped() {
+        guard let fetchedCards else { return }
+        let grouped = Dictionary(grouping: fetchedCards, by: { $0.type })
+            .sorted(by: {
+                $0.key.description < $1.key.description
+            })
+            .map {
+                GroupedCreditCard(key: $0, value: $1.sorted(by: { $0.id < $1.id }))
+            }
+        state = .grouped(result: grouped)
     }
 }
 
@@ -69,10 +89,10 @@ class MockFavouritesManager: FavouritesManagerProtocol {
     func remove(_ cardID: Int) { }
 }
 
-extension CreditCardListViewModel: Mockable {
+extension CreditCardsViewModel: Mockable {
     
-    static var mock: CreditCardListViewModel {
-        CreditCardListViewModel(
+    static var mock: CreditCardsViewModel {
+        CreditCardsViewModel(
             service: MockCreditCardService(),
             favouritesManager: MockFavouritesManager()
         )

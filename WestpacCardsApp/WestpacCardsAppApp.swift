@@ -11,7 +11,7 @@ import SwiftUI
 struct WestpacCardsAppApp: App {
     var body: some Scene {
         WindowGroup {
-            CreditCardListView(viewModel: CreditCardListViewModel())
+            CreditCardsView(viewModel: CreditCardsViewModel())
         }
     }
 }
