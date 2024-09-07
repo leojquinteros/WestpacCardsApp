@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct GroupedCreditCardListView: View {
-    
     let cards: [GroupedCreditCard]
-    let viewModel: CreditCardsViewModel
+    let onFavorite: (CreditCard) -> Void
+    let onGroup: (() -> Void)?
+    
+    init(cards: [GroupedCreditCard], onFavorite: @escaping (CreditCard) -> Void, onGroup: (() -> Void)? = nil) {
+        self.cards = cards
+        self.onFavorite = onFavorite
+        self.onGroup = onGroup
+    }
     
     var body: some View {
         NavigationStack {
@@ -21,7 +27,7 @@ struct GroupedCreditCardListView: View {
                             CreditCardView(model: card)
                                 .swipeActions(allowsFullSwipe: false) {
                                     Button {
-                                        viewModel.saveToFavourites(card)
+                                        onFavorite(card)
                                     } label: {
                                         Label("Save", symbol: .star)
                                     }
@@ -30,13 +36,15 @@ struct GroupedCreditCardListView: View {
                         }
                     }
                 }
+                .listRowSeparator(.hidden)
             }
             .navigationTitle("Grouped cards")
             .toolbar {
                 Button("List") {
-                    viewModel.list()
+                    onGroup?()
                 }
             }
+            .listStyle(.plain)
         }
     }
 }
@@ -59,5 +67,5 @@ struct GroupedCreditCardListView: View {
                 type: .visa
             )
         ])
-    ], viewModel: CreditCardsViewModel.mock)
+    ]) { _ in }
 }

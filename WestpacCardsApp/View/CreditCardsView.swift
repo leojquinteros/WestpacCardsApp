@@ -9,7 +9,9 @@ import SwiftUI
 
 struct CreditCardsView: View {
     
+    @Environment(\.scenePhase) var scenePhase
     @ObservedObject var viewModel: CreditCardsViewModel
+    @State var viewOpacity: Double = 100.0
     
     var body: some View {
         VStack {
@@ -23,13 +25,21 @@ struct CreditCardsView: View {
                     message: message
                 )
             case .loaded(let cards):
-                CreditCardListView(cards: cards, viewModel: viewModel)
+                CreditCardListView(cards: cards) { card in
+                    viewModel.saveToFavourites(card)
+                }
             case .grouped(let cardsDictionary):
-                GroupedCreditCardListView(cards: cardsDictionary, viewModel: viewModel)
+                GroupedCreditCardListView(cards: cardsDictionary) { card in
+                    viewModel.saveToFavourites(card)
+                }
             }
         }
+        .opacity(viewOpacity)
         .task {
             await viewModel.loadCreditCards()
+        }
+        .onChange(of: scenePhase) { _, newPhase in
+            viewOpacity = newPhase == .active ? 100.0 : 0.0
         }
     }
 }

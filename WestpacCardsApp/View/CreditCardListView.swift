@@ -9,7 +9,14 @@ import SwiftUI
 
 struct CreditCardListView: View {
     let cards: [CreditCard]
-    let viewModel: CreditCardsViewModel
+    let onFavorite: (CreditCard) -> Void
+    let onGroup: (() -> Void)?
+    
+    init(cards: [CreditCard], onFavorite: @escaping (CreditCard) -> Void, onGroup: (() -> Void)? = nil) {
+        self.cards = cards
+        self.onFavorite = onFavorite
+        self.onGroup = onGroup
+    }
     
     var body: some View {
         NavigationStack {
@@ -18,20 +25,22 @@ struct CreditCardListView: View {
                     CreditCardView(model: card)
                         .swipeActions(allowsFullSwipe: false) {
                             Button {
-                                viewModel.saveToFavourites(card)
+                                onFavorite(card)
                             } label: {
                                 Label("Save", symbol: .star)
                             }
                             .tint(.yellow)
                         }
                 }
+                .listRowSeparator(.hidden)
             }
             .navigationTitle("Card list")
             .toolbar {
                 Button("Group") {
-                    viewModel.grouped()
+                    onGroup?()
                 }
             }
+            .listStyle(.plain)
         }
     }
 }
@@ -54,7 +63,7 @@ struct CreditCardListView: View {
             expiryDate: "tomorrow",
             type: .visa
         )
-    ], viewModel: CreditCardsViewModel.mock)
+    ]) { _ in }
 }
 
 #endif

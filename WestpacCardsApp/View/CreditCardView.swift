@@ -11,18 +11,26 @@ struct CreditCardView: View {
     let model: CreditCard
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(model.type.description)
-                .fontWeight(.bold)
-                .foregroundColor(.primary)
+        VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                Text(model.type.description)
+                    .font(.headline)
+                    .fontWeight(.bold)
+                Spacer()
+                Text(model.id.description)
+                    .font(.subheadline)
+            }
             Text(model.number)
-                .foregroundColor(.primary)
-                .lineLimit(1)
+                .font(.subheadline)
+                .foregroundColor(.gray)
             Text(model.expiryDate)
+                .font(.caption)
                 .foregroundColor(.primary)
-                .lineLimit(1)
         }
         .padding()
+        .background(Color(UIColor.systemBackground))
+        .cornerRadius(10)
+        .shadow(radius: 5)
     }
 }
 

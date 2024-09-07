@@ -10,13 +10,13 @@ import XCTest
 
 final class CreditCardListViewModelTests: XCTestCase {
 
-    private var viewModel: CreditCardListViewModel!
+    private var viewModel: CreditCardsViewModel!
     private var mockService: MockCreditCardService!
 
     override func setUp() {
         super.setUp()
         mockService = MockCreditCardService()
-        viewModel = CreditCardListViewModel(service: mockService, favouritesManager: MockFavouritesManager())
+        viewModel = CreditCardsViewModel(service: mockService, favouritesManager: MockFavouritesManager())
     }
 
     override func tearDown() {
