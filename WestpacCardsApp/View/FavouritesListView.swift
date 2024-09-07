@@ -21,8 +21,8 @@ struct FavouritesListView: View {
             if cards.isEmpty {
                 CreditCardsUnavailable(
                     symbol: .noCards,
-                    title: "No favourite to show",
-                    message: "Try to save some cards to this list using swipe actions"
+                    title: "No favourites to show",
+                    message: "Start saving some cards to this list using swipe actions!"
                 )
             } else {
                 ForEach(cards, id: \.self) { card in
