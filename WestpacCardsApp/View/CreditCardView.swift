@@ -38,13 +38,7 @@ struct CreditCardView: View {
 
 #Preview("CreditCardView") {
     CreditCardView(
-        model: CreditCard(
-            id: 123,
-            uid: "abc-123-def-456",
-            number: "123456789",
-            expiryDate: "tomorrow",
-            type: .visa
-        )
+        model: CreditCard(id: 123, uid: "abc", number: "123", expiryDate: "1-11-1111", type: .visa)
     )
 }
 

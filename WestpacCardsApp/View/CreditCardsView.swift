@@ -26,9 +26,17 @@ struct CreditCardsView: View {
                         message: message
                     )
                 case .loaded(let cards):
-                    CreditCardListView(cards: cards) { card in
-                        viewModel.saveToFavourites(card)
-                    }
+                    CreditCardListView(
+                        cards: cards,
+                        onFavorite: { card in
+                            viewModel.saveToFavourites(card)
+                        }, 
+                        onRefresh: {
+                            Task(priority: .userInitiated) {
+                                await viewModel.loadCreditCards()
+                            }
+                        }
+                    )
                 case .favourites(let cards):
                     FavouritesListView(cards: cards) { card in
                         viewModel.removeFromFavourites(card)

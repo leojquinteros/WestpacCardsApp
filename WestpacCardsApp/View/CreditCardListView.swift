@@ -10,10 +10,12 @@ import SwiftUI
 struct CreditCardListView: View {
     let cards: [CreditCard]
     let onFavorite: (CreditCard) -> Void
+    let onRefresh: () -> Void
     
-    init(cards: [CreditCard], onFavorite: @escaping (CreditCard) -> Void) {
+    init(cards: [CreditCard], onFavorite: @escaping (CreditCard) -> Void, onRefresh: @escaping () -> Void) {
         self.cards = cards
         self.onFavorite = onFavorite
+        self.onRefresh = onRefresh
     }
     
     var body: some View {
@@ -31,6 +33,9 @@ struct CreditCardListView: View {
             }
             .listRowSeparator(.hidden)
         }
+        .refreshable {
+            onRefresh()
+       }
         .navigationTitle("Card list")
         .listStyle(.plain)
     }
@@ -39,22 +44,15 @@ struct CreditCardListView: View {
 #if DEBUG
 
 #Preview {
-    CreditCardListView(cards: [
-        CreditCard(
-            id: 123,
-            uid: "abc-123-def-456",
-            number: "123456789",
-            expiryDate: "tomorrow",
-            type: .visa
-        ),
-        CreditCard(
-            id: 123,
-            uid: "abc-123-def-456",
-            number: "123456789",
-            expiryDate: "tomorrow",
-            type: .visa
-        )
-    ]) { _ in }
+    CreditCardListView(
+        cards: [
+            CreditCard(id: 123, uid: "abc", number: "123", expiryDate: "1-11-1111", type: .visa),
+            CreditCard(id: 123, uid: "abc", number: "123", expiryDate: "1-11-1111", type: .visa),
+            CreditCard(id: 123, uid: "abc", number: "123", expiryDate: "1-11-1111", type: .visa)
+        ],
+        onFavorite: { _ in },
+        onRefresh: { }
+    )
 }
 
 #endif
