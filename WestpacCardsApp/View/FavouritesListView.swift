@@ -18,20 +18,28 @@ struct FavouritesListView: View {
     
     var body: some View {
         List {
-            ForEach(cards, id: \.self) { card in
-                CreditCardView(model: card)
-                    .swipeActions(allowsFullSwipe: true) {
-                        Button(role: .destructive) {
-                            onFavorite(card)
-                        } label: {
-                            Label("Remove", symbol: .remove)
+            if cards.isEmpty {
+                CreditCardsUnavailable(
+                    symbol: .noCards,
+                    title: "No favourite to show",
+                    message: "Try to save some cards to this list using swipe actions"
+                )
+            } else {
+                ForEach(cards, id: \.self) { card in
+                    CreditCardView(model: card)
+                        .swipeActions(allowsFullSwipe: true) {
+                            Button(role: .destructive) {
+                                onFavorite(card)
+                            } label: {
+                                Label("Remove", symbol: .remove)
+                            }
                         }
-                    }
+                }
+                .listRowSeparator(.hidden)
             }
-            .listRowSeparator(.hidden)
         }
-        .navigationTitle("Favourites")
         .listStyle(.plain)
+        .navigationTitle("Favourites")
     }
 }
 

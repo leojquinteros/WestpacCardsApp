@@ -12,6 +12,7 @@ enum SFSymbol: String {
     case error = "exclamationmark"
     case editList = "viewfinder"
     case remove = "trash"
+    case noCards = "creditcard.trianglebadge.exclamationmark"
 }
 
 extension Image {

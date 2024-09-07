@@ -18,25 +18,33 @@ struct GroupedCreditCardListView: View {
     
     var body: some View {
         List {
-            ForEach(cards, id: \.key) { card in
-                Section(header: Text(card.key.description)) {
-                    ForEach(card.value, id: \.self) { card in
-                        CreditCardView(model: card)
-                            .swipeActions(allowsFullSwipe: false) {
-                                Button {
-                                    onFavorite(card)
-                                } label: {
-                                    Label("Save", symbol: .star)
+            if cards.isEmpty {
+                CreditCardsUnavailable(
+                    symbol: .noCards,
+                    title: "No cards to show",
+                    message: "The card list is empty. Try again later."
+                )
+            } else {
+                ForEach(cards, id: \.key) { card in
+                    Section(header: Text(card.key.description)) {
+                        ForEach(card.value, id: \.self) { card in
+                            CreditCardView(model: card)
+                                .swipeActions(allowsFullSwipe: false) {
+                                    Button {
+                                        onFavorite(card)
+                                    } label: {
+                                        Label("Save", symbol: .star)
+                                    }
+                                    .tint(.yellow)
                                 }
-                                .tint(.yellow)
-                            }
+                        }
                     }
                 }
+                .listRowSeparator(.hidden)
             }
-            .listRowSeparator(.hidden)
         }
-        .navigationTitle("Grouped cards")
         .listStyle(.plain)
+        .navigationTitle("Grouped cards")
     }
 }
 

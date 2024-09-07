@@ -20,8 +20,7 @@ struct CreditCardsView: View {
                 case .loading:
                     LoadingView()
                 case .error(let message):
-                    CreditCardsUnavailable(
-                        symbol: .error,
+                    CreditCardsUnavailable(symbol: .error,
                         title: "Error retrieving cards",
                         message: message
                     )
