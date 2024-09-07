@@ -52,3 +52,22 @@ struct CreditCard: Hashable, Codable, Identifiable {
         }
     }
 }
+
+enum CreditCardListType: CaseIterable {
+    case all
+    case grouped
+    case favourites
+}
+
+extension CreditCardListType {
+    var description: String {
+        switch self {
+        case .all:
+            "All"
+        case .grouped:
+            "Grouped by type"
+        case .favourites:
+            "Favourites"
+        }
+    }
+}

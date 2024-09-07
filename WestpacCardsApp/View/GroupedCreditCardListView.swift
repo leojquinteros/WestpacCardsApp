@@ -10,44 +10,37 @@ import SwiftUI
 struct GroupedCreditCardListView: View {
     let cards: [GroupedCreditCard]
     let onFavorite: (CreditCard) -> Void
-    let onGroup: (() -> Void)?
     
-    init(cards: [GroupedCreditCard], onFavorite: @escaping (CreditCard) -> Void, onGroup: (() -> Void)? = nil) {
+    init(cards: [GroupedCreditCard], onFavorite: @escaping (CreditCard) -> Void) {
         self.cards = cards
         self.onFavorite = onFavorite
-        self.onGroup = onGroup
     }
     
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(cards, id: \.key) { card in
-                    Section(header: Text(card.key.description)) {
-                        ForEach(card.value, id: \.self) { card in
-                            CreditCardView(model: card)
-                                .swipeActions(allowsFullSwipe: false) {
-                                    Button {
-                                        onFavorite(card)
-                                    } label: {
-                                        Label("Save", symbol: .star)
-                                    }
-                                    .tint(.yellow)
+        List {
+            ForEach(cards, id: \.key) { card in
+                Section(header: Text(card.key.description)) {
+                    ForEach(card.value, id: \.self) { card in
+                        CreditCardView(model: card)
+                            .swipeActions(allowsFullSwipe: false) {
+                                Button {
+                                    onFavorite(card)
+                                } label: {
+                                    Label("Save", symbol: .star)
                                 }
-                        }
+                                .tint(.yellow)
+                            }
                     }
                 }
-                .listRowSeparator(.hidden)
             }
-            .navigationTitle("Grouped cards")
-            .toolbar {
-                Button("List") {
-                    onGroup?()
-                }
-            }
-            .listStyle(.plain)
+            .listRowSeparator(.hidden)
         }
+        .navigationTitle("Grouped cards")
+        .listStyle(.plain)
     }
 }
+
+#if DEBUG
 
 #Preview {
     GroupedCreditCardListView(cards: [
@@ -69,3 +62,5 @@ struct GroupedCreditCardListView: View {
         ])
     ]) { _ in }
 }
+
+#endif

@@ -1,5 +1,5 @@
 //
-//  CreditCardListView.swift
+//  FavouritesListView.swift
 //  WestpacCardsApp
 //
 //  Created by Leo Quinteros on 06/09/2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CreditCardListView: View {
+struct FavouritesListView: View {
     let cards: [CreditCard]
     let onFavorite: (CreditCard) -> Void
     
@@ -20,18 +20,17 @@ struct CreditCardListView: View {
         List {
             ForEach(cards, id: \.self) { card in
                 CreditCardView(model: card)
-                    .swipeActions(allowsFullSwipe: false) {
-                        Button {
+                    .swipeActions(allowsFullSwipe: true) {
+                        Button(role: .destructive) {
                             onFavorite(card)
                         } label: {
-                            Label("Save", symbol: .star)
+                            Label("Remove", symbol: .remove)
                         }
-                        .tint(.yellow)
                     }
             }
             .listRowSeparator(.hidden)
         }
-        .navigationTitle("Card list")
+        .navigationTitle("Favourites")
         .listStyle(.plain)
     }
 }
@@ -39,7 +38,7 @@ struct CreditCardListView: View {
 #if DEBUG
 
 #Preview {
-    CreditCardListView(cards: [
+    FavouritesListView(cards: [
         CreditCard(
             id: 123,
             uid: "abc-123-def-456",

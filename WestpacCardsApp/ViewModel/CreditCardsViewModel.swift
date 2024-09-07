@@ -10,16 +10,29 @@ import Foundation
 enum ViewState: Equatable {
     case loading
     case loaded(result: [CreditCard])
+    case favourites(result: [CreditCard])
     case grouped(result: [GroupedCreditCard])
     case error(message: String)
 }
 
 class CreditCardsViewModel: ObservableObject {
     @Published var state: ViewState = .loading
-    
+    @Published var selectedListType: CreditCardListType? {
+        didSet {
+            switch selectedListType {
+            case .all, .none:
+                state = .loaded(result: fetchedCards)
+            case .grouped:
+                state = .grouped(result: groupedCards)
+            case .favourites:
+                state = .favourites(result: favouritesManager.favourites)
+            }
+        }
+    }
+
     private let service: CreditCardServiceProtocol
     private let favouritesManager: FavouritesManagerProtocol
-    private var fetchedCards: [CreditCard]? = nil
+    private var fetchedCards: [CreditCard] = []
     
     init(
         service: CreditCardServiceProtocol = LocalCreditCardService(),
@@ -46,21 +59,18 @@ class CreditCardsViewModel: ObservableObject {
         favouritesManager.add(card)
     }
     
-    func list() {
-        guard let fetchedCards else { return }
-        state = .loaded(result: fetchedCards)
+    func removeFromFavourites(_ card: CreditCard) {
+        favouritesManager.remove(card.id)
     }
     
-    func grouped() {
-        guard let fetchedCards else { return }
-        let grouped = Dictionary(grouping: fetchedCards, by: { $0.type })
+    var groupedCards: [GroupedCreditCard] {
+        Dictionary(grouping: fetchedCards, by: { $0.type })
             .sorted(by: {
                 $0.key.description < $1.key.description
             })
             .map {
                 GroupedCreditCard(key: $0, value: $1.sorted(by: { $0.id < $1.id }))
             }
-        state = .grouped(result: grouped)
     }
 }
 
@@ -85,6 +95,7 @@ class MockCreditCardService: CreditCardServiceProtocol {
 }
 
 class MockFavouritesManager: FavouritesManagerProtocol {
+    var favourites: [CreditCard] = []
     func add(_ card: CreditCard) { }
     func remove(_ cardID: Int) { }
 }

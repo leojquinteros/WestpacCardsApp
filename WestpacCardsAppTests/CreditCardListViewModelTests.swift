@@ -59,6 +59,8 @@ private class MockCreditCardService: CreditCardServiceProtocol {
 }
 
 private class MockFavouritesManager: FavouritesManagerProtocol {
+    var favourites: [CreditCard] = []
+
     func add(_ card: CreditCard) { }
     func remove(_ cardID: Int) { }
 }

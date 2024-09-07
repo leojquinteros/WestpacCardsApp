@@ -14,23 +14,35 @@ struct CreditCardsView: View {
     @State var viewOpacity: Double = 100.0
     
     var body: some View {
-        VStack {
-            switch viewModel.state {
-            case .loading:
-                LoadingView()
-            case .error(let message):
-                CreditCardsUnavailable(
-                    symbol: .error,
-                    title: "Error retrieving cards",
-                    message: message
-                )
-            case .loaded(let cards):
-                CreditCardListView(cards: cards) { card in
-                    viewModel.saveToFavourites(card)
+        NavigationStack {
+            VStack {
+                switch viewModel.state {
+                case .loading:
+                    LoadingView()
+                case .error(let message):
+                    CreditCardsUnavailable(
+                        symbol: .error,
+                        title: "Error retrieving cards",
+                        message: message
+                    )
+                case .loaded(let cards):
+                    CreditCardListView(cards: cards) { card in
+                        viewModel.saveToFavourites(card)
+                    }
+                case .favourites(let cards):
+                    FavouritesListView(cards: cards) { card in
+                        viewModel.removeFromFavourites(card)
+                    }
+                case .grouped(let cardsDictionary):
+                    GroupedCreditCardListView(cards: cardsDictionary) { card in
+                        viewModel.saveToFavourites(card)
+                    }
                 }
-            case .grouped(let cardsDictionary):
-                GroupedCreditCardListView(cards: cardsDictionary) { card in
-                    viewModel.saveToFavourites(card)
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    CardViewSelector(selection: $viewModel.selectedListType)
+                        .disabled(viewModel.state == .loading)
                 }
             }
         }

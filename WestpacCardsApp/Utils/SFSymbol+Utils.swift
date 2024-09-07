@@ -10,6 +10,8 @@ import SwiftUI
 enum SFSymbol: String {
     case star = "star.fill"
     case error = "exclamationmark"
+    case editList = "viewfinder"
+    case remove = "trash"
 }
 
 extension Image {

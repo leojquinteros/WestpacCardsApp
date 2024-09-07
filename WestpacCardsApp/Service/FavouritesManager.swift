@@ -8,6 +8,7 @@
 import Foundation
 
 protocol FavouritesManagerProtocol {
+    var favourites: [CreditCard] { get }
     func add(_ card: CreditCard)
     func remove(_ cardID: Int)
 }
