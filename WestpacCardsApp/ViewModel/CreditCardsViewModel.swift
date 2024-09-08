@@ -22,32 +22,11 @@ class CreditCardsViewModel: ObservableObject {
         didSet {
             switch selectedListType {
             case .all, .none:
-                if fetchedCards.isEmpty {
-                    state = .empty(
-                        title: "No cards to show",
-                        message: "The card list is empty. Try again later."
-                    )
-                } else {
-                    state = .loaded(result: fetchedCards)
-                }
+                state = fetchedCards.isEmpty ? emptyState(for: .all) : .loaded(result: fetchedCards)
             case .grouped:
-                if groupedCards.isEmpty {
-                    state = .empty(
-                        title: "No card groups to show",
-                        message: "The card groups are empty. Try again later."
-                    )
-                } else {
-                    state = .grouped(result: groupedCards)
-                }
+                state = groupedCards.isEmpty ? emptyState(for: .grouped) : .grouped(result: groupedCards)
             case .favourites:
-                if favouriteCards.isEmpty {
-                    state = .empty(
-                        title: "No favourites to show",
-                        message: "Start saving some cards to this list using swipe actions!"
-                    )
-                } else {
-                    state = .favourites(result: favouriteCards)
-                }
+                state = favouriteCards.isEmpty ? emptyState(for: .favourites) : .favourites(result: favouriteCards)
             }
         }
     }
@@ -70,11 +49,11 @@ class CreditCardsViewModel: ObservableObject {
         let result = await service.fetch()
         switch result {
         case .success(let result):
-            state = .loaded(result: result)
             fetchedCards = result
+            state = result.isEmpty ? emptyState(for: .all) : .loaded(result: result)
         case .failure(let error):
-            state = .error(message: error.localizedDescription)
             fetchedCards = []
+            state = .error(message: error.localizedDescription)
         }
     }
     
@@ -84,6 +63,9 @@ class CreditCardsViewModel: ObservableObject {
     
     func removeFromFavourites(_ card: CreditCard) {
         favouritesManager.remove(card.id)
+        if favouriteCards.isEmpty {
+            state = emptyState(for: .favourites)
+        }
     }
     
     private var favouriteCards: [CreditCard] {
@@ -98,6 +80,26 @@ class CreditCardsViewModel: ObservableObject {
             .map {
                 GroupedCreditCard(key: $0, value: $1.sorted(by: { $0.expiryDate < $1.expiryDate }))
             }
+    }
+    
+    private func emptyState(for listType: CreditCardListType) -> ViewState {
+        switch listType {
+        case .all:
+            return .empty(
+                title: "No cards to show",
+                message: "The card list is empty. Try again later."
+            )
+        case .grouped:
+            return .empty(
+                title: "No card groups to show",
+                message: "The card groups are empty. Try again later."
+            )
+        case .favourites:
+            return .empty(
+                title: "No favourites to show",
+                message: "Start saving some cards to this list using swipe actions!"
+            )
+        }
     }
 }
 
