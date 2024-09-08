@@ -73,9 +73,9 @@ struct CreditCardsUnavailable: View {
 
 #Preview("CreditCardsUnavailable with no action") {
     CreditCardsUnavailable(
-        symbol: .error,
-        title: "Unable to show card list",
-        message: "Description: Decoding error"
+        symbol: .noCards,
+        title: "No cards to show",
+        message: "Description: Empty list"
     )
 }
 

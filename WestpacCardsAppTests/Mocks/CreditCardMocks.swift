@@ -31,9 +31,7 @@ class MockCreditCardService: CreditCardServiceProtocol {
 }
 
 class MockFavouritesManager: FavouritesManagerProtocol {
-    var favourites: [CreditCard] = [
-        CreditCardMocks.list.first!
-    ]
+    var favourites: [CreditCard] = []
 
     func add(_ card: CreditCard) { }
     func remove(_ cardID: Int) { }

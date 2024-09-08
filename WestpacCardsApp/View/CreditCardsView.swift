@@ -19,6 +19,12 @@ struct CreditCardsView: View {
                 switch viewModel.state {
                 case .loading:
                     LoadingView()
+                case .empty(let title, let message):
+                    CreditCardsUnavailable(
+                        symbol: .noCards,
+                        title: title,
+                        message: message
+                    )
                 case .error(let message):
                     CreditCardsUnavailable(
                         symbol: .error,

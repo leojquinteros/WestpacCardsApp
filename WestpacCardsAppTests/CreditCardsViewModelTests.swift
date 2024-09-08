@@ -39,6 +39,16 @@ final class CreditCardsViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.state, .loaded(result: creditCards))
     }
     
+    func testAllCreditCards() async {
+        let creditCards = CreditCardMocks.list
+        mockService.result = .success(creditCards)
+
+        await viewModel.loadCreditCards()
+        viewModel.selectedListType = .all
+
+        XCTAssertEqual(viewModel.state, .loaded(result: creditCards))
+    }
+    
     func testGroupedCreditCards() async {
         let creditCards = CreditCardMocks.list
         mockService.result = .success(creditCards)
@@ -64,13 +74,51 @@ final class CreditCardsViewModelTests: XCTestCase {
     func testFavouritesCreditCards() async {
         let creditCards = CreditCardMocks.list
         mockService.result = .success(creditCards)
-
+        let mockFavourites = [CreditCardMocks.list.first!]
+        mockManager.favourites = mockFavourites
+        
         await viewModel.loadCreditCards()
         viewModel.selectedListType = .favourites
+    
+        XCTAssertEqual(viewModel.state, .favourites(result: mockFavourites))
+    }
+    
+    func testEmptyCreditCardList() async {
+        mockService.result = .success([])
+
+        await viewModel.loadCreditCards()
+        viewModel.selectedListType = .all
+
+        XCTAssertEqual(viewModel.state, .empty(
+            title: "No cards to show",
+            message: "The card list is empty. Try again later."
+        ))
+    }
+    
+    func testEmptyCreditCardGroups() async {
+        mockService.result = .success([])
+
+        await viewModel.loadCreditCards()
+        viewModel.selectedListType = .grouped
+
+        XCTAssertEqual(viewModel.state, .empty(
+            title: "No card groups to show",
+            message: "The card groups are empty. Try again later."
+        ))
+    }
+    
+    func testEmptyFavouriteCreditCards() async {
+        let creditCards = CreditCardMocks.list
+        mockService.result = .success(creditCards)
+        mockManager.favourites = []
         
-        let favouriteCard = CreditCard(id: 123, uid: "abc-123-def-456", number: "123456789", expiryDate: mockExpiryDate, type: .visa)
-        
-        XCTAssertEqual(viewModel.state, .favourites(result: [favouriteCard]))
+        await viewModel.loadCreditCards()
+        viewModel.selectedListType = .favourites
+
+        XCTAssertEqual(viewModel.state, .empty(
+            title: "No favourites to show",
+            message: "Start saving some cards to this list using swipe actions!"
+        ))
     }
 
     func testErrorFetchingCreditCards() async {

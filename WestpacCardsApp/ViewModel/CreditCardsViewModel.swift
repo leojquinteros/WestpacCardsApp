@@ -12,6 +12,7 @@ enum ViewState: Equatable {
     case loaded(result: [CreditCard])
     case favourites(result: [CreditCard])
     case grouped(result: [GroupedCreditCard])
+    case empty(title: String, message: String)
     case error(message: String)
 }
 
@@ -21,11 +22,32 @@ class CreditCardsViewModel: ObservableObject {
         didSet {
             switch selectedListType {
             case .all, .none:
-                state = .loaded(result: fetchedCards)
+                if fetchedCards.isEmpty {
+                    state = .empty(
+                        title: "No cards to show",
+                        message: "The card list is empty. Try again later."
+                    )
+                } else {
+                    state = .loaded(result: fetchedCards)
+                }
             case .grouped:
-                state = .grouped(result: groupedCards)
+                if groupedCards.isEmpty {
+                    state = .empty(
+                        title: "No card groups to show",
+                        message: "The card groups are empty. Try again later."
+                    )
+                } else {
+                    state = .grouped(result: groupedCards)
+                }
             case .favourites:
-                state = .favourites(result: favouriteCards)
+                if favouriteCards.isEmpty {
+                    state = .empty(
+                        title: "No favourites to show",
+                        message: "Start saving some cards to this list using swipe actions!"
+                    )
+                } else {
+                    state = .favourites(result: favouriteCards)
+                }
             }
         }
     }
@@ -47,11 +69,12 @@ class CreditCardsViewModel: ObservableObject {
         state = .loading
         let result = await service.fetch()
         switch result {
-        case .failure(let error):
-            state = .error(message: error.localizedDescription)
         case .success(let result):
             state = .loaded(result: result)
             fetchedCards = result
+        case .failure(let error):
+            state = .error(message: error.localizedDescription)
+            fetchedCards = []
         }
     }
     

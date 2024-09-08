@@ -9,7 +9,7 @@ import SwiftUI
 
 enum SFSymbol: String {
     case star = "star.fill"
-    case error = "exclamationmark"
+    case error = "exclamationmark.triangle"
     case editList = "ellipsis.viewfinder"
     case remove = "trash"
     case noCards = "creditcard.trianglebadge.exclamationmark"
