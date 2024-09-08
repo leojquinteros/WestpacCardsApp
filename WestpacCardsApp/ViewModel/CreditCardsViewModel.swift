@@ -73,7 +73,7 @@ class CreditCardsViewModel: ObservableObject {
                 $0.key.description < $1.key.description
             })
             .map {
-                GroupedCreditCard(key: $0, value: $1.sorted(by: { $0.id < $1.id }))
+                GroupedCreditCard(key: $0, value: $1.sorted(by: { $0.expiryDate < $1.expiryDate }))
             }
     }
 }
