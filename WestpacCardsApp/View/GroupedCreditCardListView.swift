@@ -45,9 +45,14 @@ struct GroupedCreditCardListView: View {
 #Preview {
     GroupedCreditCardListView(cards: [
         GroupedCreditCard(key: .visa, value: [
-            CreditCard(id: 123, uid: "abc", number: "123", expiryDate: Date(), type: .visa),
-            CreditCard(id: 123, uid: "abc", number: "123", expiryDate: Date(), type: .visa),
-            CreditCard(id: 123, uid: "abc", number: "123", expiryDate: Date(), type: .visa)
+            CreditCard(id: 1, uid: "abc", number: "123", expiryDate: Date(), type: .visa),
+            CreditCard(id: 2, uid: "abc", number: "123", expiryDate: Date(), type: .visa),
+            CreditCard(id: 3, uid: "abc", number: "123", expiryDate: Date(), type: .visa)
+        ]),
+        GroupedCreditCard(key: .maestro, value: [
+            CreditCard(id: 4, uid: "abc", number: "123", expiryDate: Date(), type: .maestro),
+            CreditCard(id: 5, uid: "abc", number: "123", expiryDate: Date(), type: .maestro),
+            CreditCard(id: 6, uid: "abc", number: "123", expiryDate: Date(), type: .maestro)
         ])
     ]) { _ in }
 }
