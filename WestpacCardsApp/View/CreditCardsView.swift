@@ -58,6 +58,7 @@ struct CreditCardsView: View {
                     }
                 }
             }
+            .animation(.smooth, value: viewModel.state)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     CardViewSelector(selection: $viewModel.selectedListType)
