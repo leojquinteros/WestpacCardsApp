@@ -25,7 +25,7 @@ class CreditCardsViewModel: ObservableObject {
             case .grouped:
                 state = .grouped(result: groupedCards)
             case .favourites:
-                state = .favourites(result: favouritesManager.favourites)
+                state = .favourites(result: favouriteCards)
             }
         }
     }
@@ -63,7 +63,11 @@ class CreditCardsViewModel: ObservableObject {
         favouritesManager.remove(card.id)
     }
     
-    var groupedCards: [GroupedCreditCard] {
+    private var favouriteCards: [CreditCard] {
+        favouritesManager.favourites
+    }
+    
+    private var groupedCards: [GroupedCreditCard] {
         Dictionary(grouping: fetchedCards, by: { $0.type })
             .sorted(by: {
                 $0.key.description < $1.key.description

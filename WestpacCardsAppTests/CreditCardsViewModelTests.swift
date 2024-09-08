@@ -1,5 +1,5 @@
 //
-//  CreditCardListViewModelTests.swift
+//  CreditCardsViewModelTests.swift
 //  WestpacCardsAppTests
 //
 //  Created by Leo Quinteros on 06/09/2024.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import WestpacCardsApp
 
-final class CreditCardListViewModelTests: XCTestCase {
+final class CreditCardsViewModelTests: XCTestCase {
 
     private var viewModel: CreditCardsViewModel!
     private var mockService: MockCreditCardService!
@@ -48,19 +48,3 @@ final class CreditCardListViewModelTests: XCTestCase {
     }
 }
 
-private class MockCreditCardService: CreditCardServiceProtocol {
-    var url: URL?
-
-    var result: Result<[CreditCard], ServiceError>?
-
-    func fetch() async -> Result<[CreditCard], ServiceError> {
-        result ?? .failure(.invalidRequestError)
-    }
-}
-
-private class MockFavouritesManager: FavouritesManagerProtocol {
-    var favourites: [CreditCard] = []
-
-    func add(_ card: CreditCard) { }
-    func remove(_ cardID: Int) { }
-}

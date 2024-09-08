@@ -25,7 +25,7 @@
 		85A4A8C72C89CD9900360779 /* creditcards.json in Resources */ = {isa = PBXBuildFile; fileRef = 85A4A8C62C89CD9900360779 /* creditcards.json */; };
 		85A4A8C92C89CE7C00360779 /* LocalCreditCardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8C82C89CE7C00360779 /* LocalCreditCardService.swift */; };
 		85A4A8CB2C89DB4000360779 /* CreditCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8CA2C89DB4000360779 /* CreditCardType.swift */; };
-		85A4A8CD2C89DC7D00360779 /* CreditCardListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8CC2C89DC7D00360779 /* CreditCardListViewModelTests.swift */; };
+		85A4A8CD2C89DC7D00360779 /* CreditCardsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8CC2C89DC7D00360779 /* CreditCardsViewModelTests.swift */; };
 		85A4A8CF2C89EE8800360779 /* FavouritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8CE2C89EE8800360779 /* FavouritesManager.swift */; };
 		85A4A8D12C89F29000360779 /* FavouritesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8D02C89F29000360779 /* FavouritesManagerTests.swift */; };
 		85A4A8D52C8A857400360779 /* CreditCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8D42C8A857400360779 /* CreditCardListView.swift */; };
@@ -34,6 +34,7 @@
 		85A4A8DB2C8C03D400360779 /* FavouritesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8DA2C8C03D400360779 /* FavouritesListView.swift */; };
 		85A4A8DD2C8D1D1300360779 /* DateFormatter+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8DC2C8D1D1300360779 /* DateFormatter+Utils.swift */; };
 		85A4A8E12C8D221500360779 /* DateFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8E02C8D221500360779 /* DateFormatterTests.swift */; };
+		85A4A8E42C8D319A00360779 /* CreditCardMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A4A8E32C8D319A00360779 /* CreditCardMocks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +76,7 @@
 		85A4A8C62C89CD9900360779 /* creditcards.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = creditcards.json; sourceTree = "<group>"; };
 		85A4A8C82C89CE7C00360779 /* LocalCreditCardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCreditCardService.swift; sourceTree = "<group>"; };
 		85A4A8CA2C89DB4000360779 /* CreditCardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardType.swift; sourceTree = "<group>"; };
-		85A4A8CC2C89DC7D00360779 /* CreditCardListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardListViewModelTests.swift; sourceTree = "<group>"; };
+		85A4A8CC2C89DC7D00360779 /* CreditCardsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardsViewModelTests.swift; sourceTree = "<group>"; };
 		85A4A8CE2C89EE8800360779 /* FavouritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesManager.swift; sourceTree = "<group>"; };
 		85A4A8D02C89F29000360779 /* FavouritesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesManagerTests.swift; sourceTree = "<group>"; };
 		85A4A8D42C8A857400360779 /* CreditCardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardListView.swift; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 		85A4A8DA2C8C03D400360779 /* FavouritesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesListView.swift; sourceTree = "<group>"; };
 		85A4A8DC2C8D1D1300360779 /* DateFormatter+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Utils.swift"; sourceTree = "<group>"; };
 		85A4A8E02C8D221500360779 /* DateFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterTests.swift; sourceTree = "<group>"; };
+		85A4A8E32C8D319A00360779 /* CreditCardMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardMocks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +159,8 @@
 		859F6C3A2C89A8C600EDD772 /* WestpacCardsAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				85A4A8CC2C89DC7D00360779 /* CreditCardListViewModelTests.swift */,
+				85A4A8E22C8D317F00360779 /* Mocks */,
+				85A4A8CC2C89DC7D00360779 /* CreditCardsViewModelTests.swift */,
 				85A4A8D02C89F29000360779 /* FavouritesManagerTests.swift */,
 				85A4A8E02C8D221500360779 /* DateFormatterTests.swift */,
 			);
@@ -233,6 +236,14 @@
 				85A4A8DC2C8D1D1300360779 /* DateFormatter+Utils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		85A4A8E22C8D317F00360779 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				85A4A8E32C8D319A00360779 /* CreditCardMocks.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,8 +403,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85A4A8CD2C89DC7D00360779 /* CreditCardListViewModelTests.swift in Sources */,
+				85A4A8CD2C89DC7D00360779 /* CreditCardsViewModelTests.swift in Sources */,
 				85A4A8E12C8D221500360779 /* DateFormatterTests.swift in Sources */,
+				85A4A8E42C8D319A00360779 /* CreditCardMocks.swift in Sources */,
 				85A4A8D12C89F29000360779 /* FavouritesManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
