@@ -16,10 +16,10 @@ struct CreditCard: Hashable, Codable, Identifiable {
     let id: Int
     let uid: String
     let number: String
-    let expiryDate: String
+    let expiryDate: Date
     let type: CreditCardType
     
-    init(id: Int, uid: String, number: String, expiryDate: String, type: CreditCardType) {
+    init(id: Int, uid: String, number: String, expiryDate: Date, type: CreditCardType) {
         self.id = id
         self.uid = uid
         self.number = number
@@ -40,7 +40,7 @@ struct CreditCard: Hashable, Codable, Identifiable {
         self.id = try container.decode(Int.self, forKey: .id)
         self.uid = try container.decode(String.self, forKey: .uid)
         self.number = try container.decode(String.self, forKey: .number)
-        self.expiryDate = try container.decode(String.self, forKey: .expiryDate)
+        self.expiryDate = try container.decode(Date.self, forKey: .expiryDate)
         let rawCardType = try container.decode(String.self, forKey: .type)
         if let cardType = CreditCardType(rawValue: rawCardType) {
              self.type = cardType

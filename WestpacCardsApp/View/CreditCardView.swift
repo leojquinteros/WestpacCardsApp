@@ -23,7 +23,7 @@ struct CreditCardView: View {
             Text(model.number)
                 .font(.subheadline)
                 .foregroundColor(.gray)
-            Text(model.expiryDate)
+            Text(model.expiryDate.dateFormatted())
                 .font(.caption)
                 .foregroundColor(.primary)
         }
@@ -38,7 +38,7 @@ struct CreditCardView: View {
 
 #Preview("CreditCardView") {
     CreditCardView(
-        model: CreditCard(id: 123, uid: "abc", number: "123", expiryDate: "1-11-1111", type: .visa)
+        model: CreditCard(id: 123, uid: "abc", number: "123", expiryDate: Date(), type: .visa)
     )
 }
 

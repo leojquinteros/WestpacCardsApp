@@ -12,9 +12,16 @@ class LocalCreditCardService: CreditCardServiceProtocol {
     
     init(decoder: JSONDecoder = JSONDecoder()) {
         self.decoder = decoder
+        self.decoder.dateDecodingStrategy = .formatted(.core)
     }
 
     func fetch() async -> Result<[CreditCard], ServiceError> {
+        do {
+            // emulate API fetch delay
+            try await Task.sleep(until: .now + .seconds(2), clock: .continuous)
+        } catch {
+            return .failure(.transportError(error))
+        }
         do {
             let data = try await creditCardsData()
             let response = try decoder.decode([CreditCard].self, from: data)

@@ -26,7 +26,7 @@ final class FavouritesManagerTests: XCTestCase {
     }
     
     func testAddCardToFavourites() {
-        let card = CreditCard(id: 12, uid: "abc-123", number: "123456", expiryDate: "", type: .visa)
+        let card = CreditCard(id: 12, uid: "abc-123", number: "123456", expiryDate: Date(), type: .visa)
         
         favouritesManager.add(card)
         
@@ -36,7 +36,7 @@ final class FavouritesManagerTests: XCTestCase {
     }
     
     func testAddSameCardToFavourites() {
-        let card = CreditCard(id: 12, uid: "abc-123", number: "123456", expiryDate: "", type: .visa)
+        let card = CreditCard(id: 12, uid: "abc-123", number: "123456", expiryDate: Date(), type: .visa)
         
         for _ in 1...5 {
             favouritesManager.add(card)
@@ -48,7 +48,7 @@ final class FavouritesManagerTests: XCTestCase {
     }
     
     func testAddAndThenRemoveCard() {
-        let card = CreditCard(id: 12, uid: "abc-123", number: "123456", expiryDate: "", type: .visa)
+        let card = CreditCard(id: 12, uid: "abc-123", number: "123456", expiryDate: Date(), type: .visa)
         
         favouritesManager.add(card)
         favouritesManager.remove(card.id)
@@ -58,7 +58,7 @@ final class FavouritesManagerTests: XCTestCase {
     }
     
     func testRemoveNonExistingCard() {
-        let card = CreditCard(id: 12, uid: "abc-123", number: "123456", expiryDate: "", type: .visa)
+        let card = CreditCard(id: 12, uid: "abc-123", number: "123456", expiryDate: Date(), type: .visa)
         favouritesManager.add(card)
 
         favouritesManager.remove(123)

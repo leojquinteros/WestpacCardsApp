@@ -54,9 +54,9 @@ struct CreditCardListView: View {
 #Preview {
     CreditCardListView(
         cards: [
-            CreditCard(id: 123, uid: "abc", number: "123", expiryDate: "1-11-1111", type: .visa),
-            CreditCard(id: 123, uid: "abc", number: "123", expiryDate: "1-11-1111", type: .visa),
-            CreditCard(id: 123, uid: "abc", number: "123", expiryDate: "1-11-1111", type: .visa)
+            CreditCard(id: 123, uid: "abc", number: "123", expiryDate: Date(), type: .visa),
+            CreditCard(id: 123, uid: "abc", number: "123", expiryDate: Date(), type: .visa),
+            CreditCard(id: 123, uid: "abc", number: "123", expiryDate: Date(), type: .visa)
         ],
         onFavorite: { _ in },
         onRefresh: { }

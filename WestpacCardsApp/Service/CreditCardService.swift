@@ -17,6 +17,7 @@ class CreditCardService: CreditCardServiceProtocol {
     
     init(decoder: JSONDecoder = JSONDecoder()) {
         self.decoder = decoder
+        self.decoder.dateDecodingStrategy = .formatted(.core)
     }
     
     func fetch() async -> Result<[CreditCard], ServiceError> {

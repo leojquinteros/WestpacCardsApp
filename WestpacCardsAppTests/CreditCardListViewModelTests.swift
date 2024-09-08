@@ -27,10 +27,10 @@ final class CreditCardListViewModelTests: XCTestCase {
 
     func testSuccessfullyLoadedCreditCards() async {
         let creditCards = [
-            CreditCard(id: 123, uid: "abc-123-def-456", number: "123456789", expiryDate: "tomorrow", type: .visa),
-            CreditCard(id: 456, uid: "abc-123-def-457", number: "341234567", expiryDate: "", type: .visa),
-            CreditCard(id: 789, uid: "abc-123-def-458", number: "145678934", expiryDate: "", type: .americanExpress),
-            CreditCard(id: 111, uid: "abc-123-def-459", number: "343434344", expiryDate: "12-12-2024", type: .visa)
+            CreditCard(id: 123, uid: "abc-123-def-456", number: "123456789", expiryDate: Date(), type: .visa),
+            CreditCard(id: 456, uid: "abc-123-def-457", number: "341234567", expiryDate: Date(), type: .visa),
+            CreditCard(id: 789, uid: "abc-123-def-458", number: "145678934", expiryDate: Date(), type: .americanExpress),
+            CreditCard(id: 111, uid: "abc-123-def-459", number: "343434344", expiryDate: Date(), type: .visa)
         ]
         mockService.result = .success(creditCards)
 
