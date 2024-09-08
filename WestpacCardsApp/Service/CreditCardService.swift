@@ -25,10 +25,19 @@ class CreditCardService: CreditCardServiceProtocol {
             return .failure(.invalidRequestError)
         }
         var data: Data
+        var urlResponse: URLResponse
         do {
-            data = try await URLSession.shared.data(from: url).0
+            let (fetchedData, response) = try await URLSession.shared.data(from: url)
+            data = fetchedData
+            urlResponse = response
         } catch {
             return .failure(.transportError(error))
+        }
+        guard let httpResponse = urlResponse as? HTTPURLResponse else {
+            return .failure(.unknownError)
+        }
+        guard (200...299).contains(httpResponse.statusCode) else {
+            return .failure(.httpError(httpResponse.statusCode))
         }
         var response: [CreditCard]
         do {
